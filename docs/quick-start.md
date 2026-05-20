@@ -124,13 +124,15 @@ Dispatch prompt validation check:
 
     node scripts/test-dispatch-prompt-validate.mjs
 
-Release integrity check:
+Public smoke check:
 
-    node scripts/test-release-integrity-suite.mjs
+    pnpm run test:public
 
 These checks are intended to validate public code paths and safety constraints.
 
 They should not require private runtime artifacts.
+
+Do not use the private release-integrity suite as a public first-run check. That suite belongs to the private audit line and expects private documents, internal tags, and internal release records that are intentionally not included in this public repository.
 
 ---
 

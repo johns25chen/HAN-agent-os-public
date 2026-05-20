@@ -163,6 +163,10 @@ For a safer step-by-step setup, read:
 
 - [Quick Start Guide](docs/quick-start.md)
 
+Public smoke check:
+
+    pnpm run test:public
+
 ---
 
 ## Key links
