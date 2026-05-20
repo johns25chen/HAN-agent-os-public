@@ -1,5 +1,7 @@
 # HAN Agent OS
 
+[![Public CI](https://github.com/johns25chen/HAN-agent-os-public/actions/workflows/public-ci.yml/badge.svg)](https://github.com/johns25chen/HAN-agent-os-public/actions/workflows/public-ci.yml)
+
 **A joint-agent operating system that connects Hermes, OpenClaw, and Codex into one controlled AI workflow.**
 
 HAN Agent OS is designed for builders who want more than a chatbot.
