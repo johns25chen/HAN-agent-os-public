@@ -63,6 +63,8 @@ Expected result:
 
 The generated `dist/` directory is ignored by Git.
 
+Note: `pnpm build` creates a local `dist/` directory. That is expected. `dist/` must not be committed or published.
+
 ---
 
 ## 4. Start the MCP server

@@ -1,4 +1,5 @@
 import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
+import { spawnSync } from 'node:child_process';
 import path from 'node:path';
 
 const root = process.cwd();
@@ -46,19 +47,46 @@ function checkRequiredFiles() {
   }
 }
 
+function gitTrackedFiles() {
+  const result = spawnSync('git', ['ls-files'], {
+    cwd: root,
+    encoding: 'utf8'
+  });
+
+  if (result.status !== 0) {
+    throw new Error(`git ls-files failed: ${result.stderr || result.stdout}`);
+  }
+
+  return result.stdout.split(/\r?\n/).filter(Boolean);
+}
+
 function checkForbiddenPaths() {
-  const forbidden = [
+  const forbiddenExisting = [
     'jobs',
-    'dist',
-    'node_modules',
     'docs/han-agent-bus/han-agent-os-public-release-safety-audit.md',
     'docs/han-agent-bus/han-agent-os-public-sanitized-export-plan.md',
     'PUBLIC_EXPORT_READINESS_AUDIT.md'
   ];
 
-  for (const item of forbidden) {
+  for (const item of forbiddenExisting) {
     assert(!existsSync(path.join(root, item)), `forbidden public artifact exists: ${item}`);
   }
+
+  const tracked = gitTrackedFiles();
+  const forbiddenTrackedPrefixes = [
+    'jobs/',
+    'dist/',
+    'node_modules/'
+  ];
+
+  const forbiddenTracked = tracked.filter((file) => {
+    return forbiddenTrackedPrefixes.some((prefix) => file.startsWith(prefix));
+  });
+
+  assert(
+    forbiddenTracked.length === 0,
+    `forbidden generated/private paths are tracked:\n${forbiddenTracked.join('\n')}`
+  );
 }
 
 function checkPackageScripts() {
