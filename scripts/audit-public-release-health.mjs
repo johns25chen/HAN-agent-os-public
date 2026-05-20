@@ -69,8 +69,8 @@ function checkReleaseIndexContent() {
   const text = readFileSync(releaseIndexPath, 'utf8');
   addCheck(
     'recommended_release_text',
-    text.includes('v0.2.5-public or newer'),
-    'recommended release text includes "v0.2.5-public or newer"'
+    text.includes('v0.2.6-public or newer'),
+    'recommended release text includes "v0.2.6-public or newer"'
   );
 
   for (const tag of ['v0.1.4-public', 'v0.1.5-public']) {
@@ -118,39 +118,39 @@ function checkPackageScripts() {
 
 function checkGitTag() {
   if (!commandExists('git')) {
-    addWarning('git is unavailable; skipped local tag check for v0.2.5-public');
-    addCheck('git_tag_v0_2_5_public', true, 'skipped because git is unavailable');
+    addWarning('git is unavailable; skipped local tag check for v0.2.6-public');
+    addCheck('git_tag_v0_2_6_public', true, 'skipped because git is unavailable');
     return;
   }
 
-  const result = run('git', ['rev-parse', '--verify', '--quiet', 'refs/tags/v0.2.5-public']);
+  const result = run('git', ['rev-parse', '--verify', '--quiet', 'refs/tags/v0.2.6-public']);
   addCheck(
-    'git_tag_v0_2_5_public',
+    'git_tag_v0_2_6_public',
     result.status === 0,
-    'local git tag v0.2.5-public exists'
+    'local git tag v0.2.6-public exists'
   );
 }
 
 function checkGithubRelease() {
   if (!commandExists('gh')) {
     addWarning('gh is unavailable; skipped latest GitHub release check');
-    addCheck('github_latest_release_v0_2_5_public', true, 'skipped because gh is unavailable');
+    addCheck('github_latest_release_v0_2_6_public', true, 'skipped because gh is unavailable');
     return;
   }
 
   const authStatus = run('gh', ['auth', 'status']);
   if (authStatus.status !== 0) {
     addWarning('gh is available but not authenticated; skipped latest GitHub release check');
-    addCheck('github_latest_release_v0_2_5_public', true, 'skipped because gh is not authenticated');
+    addCheck('github_latest_release_v0_2_6_public', true, 'skipped because gh is not authenticated');
     return;
   }
 
   const result = run('gh', ['release', 'view', '--json', 'tagName,name,body', '--jq', '[.tagName, .name, .body] | join("\\n")']);
   const output = `${result.stdout || ''}\n${result.stderr || ''}`;
   addCheck(
-    'github_latest_release_v0_2_5_public',
-    result.status === 0 && output.includes('v0.2.5-public'),
-    'latest GitHub release contains v0.2.5-public'
+    'github_latest_release_v0_2_6_public',
+    result.status === 0 && output.includes('v0.2.6-public'),
+    'latest GitHub release contains v0.2.6-public'
   );
 }
 

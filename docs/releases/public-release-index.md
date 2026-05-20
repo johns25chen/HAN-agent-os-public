@@ -12,7 +12,7 @@ Use the latest public release.
 
 Recommended current release after this document is published:
 
-    v0.2.5-public or newer
+    v0.2.6-public or newer
 
 If you are new to the project, start with:
 
@@ -27,7 +27,8 @@ If you are new to the project, start with:
 
 | Release | Status | Purpose |
 |---|---|---|
-| `v0.2.5-public` | current | Public release index and version map |
+| `v0.2.6-public` | current | Public release health audit |
+| `v0.2.5-public` | stable | Public release index and version map |
 | `v0.2.4-public` | stable | Public workflow matrix and capability boundary table |
 | `v0.2.3-public` | stable | Public-safe dry-run mock implementation example |
 | `v0.2.2-public` | stable | Public-safe dry-run workflow contract |
@@ -86,6 +87,7 @@ Current v0.2 line:
 | `v0.2.3-public` | dry-run | yes | yes | no |
 | `v0.2.4-public` | workflow matrix | yes | n/a | no |
 | `v0.2.5-public` | release index | yes | n/a | no |
+| `v0.2.6-public` | release health audit | yes | n/a | no |
 
 ---
 
@@ -161,7 +163,7 @@ The public repository does not currently support:
 
 Use this rule:
 
-    If you want the clearest public documentation, use v0.2.5-public or newer.
+    If you want the clearest public release health audit coverage, use v0.2.6-public or newer.
     If you want the first complete public workflow boundary line, use v0.2.4-public or newer.
     If you want the first working dry-run mock example, use v0.2.3-public or newer.
     If you want the first working status-read mock example, use v0.2.1-public or newer.
