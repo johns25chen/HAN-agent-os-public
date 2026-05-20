@@ -159,10 +159,15 @@ Development mode:
 
     pnpm dev
 
+For a safer step-by-step setup, read:
+
+- [Quick Start Guide](docs/quick-start.md)
+
 ---
 
 ## Key links
 
+- [Quick Start Guide](docs/quick-start.md)
 - [Technical Tool Reference](docs/han-agent-bus/technical-tool-reference.md)
 - [Safety Model](docs/han-agent-bus/safety-model.md)
 - [Public Roadmap](docs/han-agent-bus/public-roadmap.md)
