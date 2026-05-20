@@ -166,6 +166,9 @@ Development mode:
 - [Technical Tool Reference](docs/han-agent-bus/technical-tool-reference.md)
 - [Safety Model](docs/han-agent-bus/safety-model.md)
 - [Public Roadmap](docs/han-agent-bus/public-roadmap.md)
+- [Security Policy](SECURITY.md)
+- [Contributing Guide](CONTRIBUTING.md)
+- [License](LICENSE)
 
 ---
 
