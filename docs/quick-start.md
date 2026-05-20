@@ -142,6 +142,10 @@ Public dry-run workflow contract check:
 
     pnpm run test:dry-run
 
+Public dry-run implementation example check:
+
+    pnpm run test:dry-run-example
+
 These checks are intended to validate public code paths and safety constraints.
 
 They should not require private runtime artifacts.
@@ -180,6 +184,7 @@ Start with:
 - [Public-Safe Status-Read Workflow](workflows/public-safe-status-read-workflow.md)
 - [Public-Safe Status-Read Example](examples/public-safe-status-read-example.md)
 - [Public-Safe Dry-Run Workflow](workflows/public-safe-dry-run-workflow.md)
+- [Public-Safe Dry-Run Example](examples/public-safe-dry-run-example.md)
 - [Security Policy](../SECURITY.md)
 - [Contributing Guide](../CONTRIBUTING.md)
 

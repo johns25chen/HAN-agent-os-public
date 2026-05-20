@@ -199,6 +199,16 @@ This creates a controlled bridge between read-only status and future execution p
 
 ---
 
+## Implementation example
+
+A public-safe mock implementation is available here:
+
+- [Public-Safe Dry-Run Example](../examples/public-safe-dry-run-example.md)
+
+The implementation example uses a mock fixture and does not perform live OpenClaw execution, shell execution, browser automation, or file mutation.
+
+---
+
 ## Final boundary
 
 This workflow is a contract only.

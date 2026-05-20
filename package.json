@@ -10,7 +10,8 @@
     "test:public": "node scripts/test-public-smoke.mjs",
     "test:status-read": "node scripts/test-public-status-read-workflow.mjs",
     "test:status-read-example": "node scripts/test-public-status-read-example.mjs",
-    "test:dry-run": "node scripts/test-public-dry-run-workflow.mjs"
+    "test:dry-run": "node scripts/test-public-dry-run-workflow.mjs",
+    "test:dry-run-example": "node scripts/test-public-dry-run-example.mjs"
   },
   "keywords": [],
   "author": "",
