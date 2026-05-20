@@ -180,6 +180,7 @@ Public smoke check:
 - [Public-Safe Dry-Run Workflow](docs/workflows/public-safe-dry-run-workflow.md)
 - [Public-Safe Dry-Run Example](docs/examples/public-safe-dry-run-example.md)
 - [Public Workflow Matrix](docs/workflows/public-workflow-matrix.md)
+- [Public Release Index](docs/releases/public-release-index.md)
 - [Technical Tool Reference](docs/han-agent-bus/technical-tool-reference.md)
 - [Safety Model](docs/han-agent-bus/safety-model.md)
 - [Public Roadmap](docs/han-agent-bus/public-roadmap.md)
@@ -260,6 +261,7 @@ The next public direction should stay narrow:
 1. stronger documentation for tool contracts
 2. more example flows
 3. public-safe workflow boundary updates
+4. public release index maintenance
 
 The project should not jump straight into unrestricted live automation.
 

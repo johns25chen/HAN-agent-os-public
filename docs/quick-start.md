@@ -150,6 +150,10 @@ Public workflow matrix check:
 
     pnpm run test:workflow-matrix
 
+Public release index check:
+
+    pnpm run test:release-index
+
 These checks are intended to validate public code paths and safety constraints.
 
 They should not require private runtime artifacts.
@@ -190,6 +194,7 @@ Start with:
 - [Public-Safe Dry-Run Workflow](workflows/public-safe-dry-run-workflow.md)
 - [Public-Safe Dry-Run Example](examples/public-safe-dry-run-example.md)
 - [Public Workflow Matrix](workflows/public-workflow-matrix.md)
+- [Public Release Index](releases/public-release-index.md)
 - [Security Policy](../SECURITY.md)
 - [Contributing Guide](../CONTRIBUTING.md)
 

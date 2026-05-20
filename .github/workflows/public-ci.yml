@@ -64,6 +64,9 @@ jobs:
       - name: Public workflow matrix test
         run: pnpm run test:workflow-matrix
 
+      - name: Public release index test
+        run: pnpm run test:release-index
+
       - name: Dispatch prompt generation test
         run: node scripts/test-dispatch-prompt-generate.mjs
 
