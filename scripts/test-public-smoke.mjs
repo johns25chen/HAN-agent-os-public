@@ -21,6 +21,9 @@ function walk(dir, files = []) {
     if (stat.isDirectory()) {
       walk(full, files);
     } else {
+      // The smoke test itself contains secret-detection regex patterns.
+      // Do not scan the scanner source as repository content.
+      if (rel === 'scripts/test-public-smoke.mjs') continue;
       files.push(rel);
     }
   }
