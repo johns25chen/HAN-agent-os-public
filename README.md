@@ -177,6 +177,7 @@ Public smoke check:
 - [Minimal Joint-Agent Flow](docs/examples/minimal-joint-agent-flow.md)
 - [Public-Safe Status-Read Workflow](docs/workflows/public-safe-status-read-workflow.md)
 - [Public-Safe Status-Read Example](docs/examples/public-safe-status-read-example.md)
+- [Public-Safe Dry-Run Workflow](docs/workflows/public-safe-dry-run-workflow.md)
 - [Technical Tool Reference](docs/han-agent-bus/technical-tool-reference.md)
 - [Safety Model](docs/han-agent-bus/safety-model.md)
 - [Public Roadmap](docs/han-agent-bus/public-roadmap.md)
@@ -256,7 +257,7 @@ The next public direction should stay narrow:
 
 1. stronger documentation for tool contracts
 2. more example flows
-3. public-safe dry-run workflow
+3. public-safe dry-run mock implementation example
 
 The project should not jump straight into unrestricted live automation.
 
