@@ -17,8 +17,9 @@ const text = readFileSync(docPath, 'utf8');
 const requiredPhrases = [
   'Public Release Index',
   'Recommended current release after this document is published:',
-  'v0.2.5-public or newer',
-  '| `v0.2.5-public` | current | Public release index and version map |',
+  'v0.2.6-public or newer',
+  '| `v0.2.6-public` | current | Public release health audit |',
+  '| `v0.2.5-public` | stable | Public release index and version map |',
   '| `v0.2.4-public` | stable | Public workflow matrix and capability boundary table |',
   '| `v0.2.3-public` | stable | Public-safe dry-run mock implementation example |',
   '| `v0.2.2-public` | stable | Public-safe dry-run workflow contract |',
