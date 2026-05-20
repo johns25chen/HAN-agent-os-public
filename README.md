@@ -174,6 +174,7 @@ Public smoke check:
 ## Key links
 
 - [Quick Start Guide](docs/quick-start.md)
+- [Minimal Joint-Agent Flow](docs/examples/minimal-joint-agent-flow.md)
 - [Technical Tool Reference](docs/han-agent-bus/technical-tool-reference.md)
 - [Safety Model](docs/han-agent-bus/safety-model.md)
 - [Public Roadmap](docs/han-agent-bus/public-roadmap.md)
@@ -253,11 +254,9 @@ The next public direction should stay narrow:
 
 1. clearer installation guide
 2. better Hermes to OpenClaw to Codex workflow examples
-3. minimal demo task
-4. public-safe status-read workflow
-5. stronger documentation for tool contracts
-6. GitHub Actions CI
-7. LICENSE, SECURITY.md, and CONTRIBUTING.md
+3. public-safe status-read workflow
+4. stronger documentation for tool contracts
+5. more example flows
 
 The project should not jump straight into unrestricted live automation.
 
