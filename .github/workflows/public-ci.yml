@@ -52,6 +52,9 @@ jobs:
       - name: Public status-read workflow test
         run: pnpm run test:status-read
 
+      - name: Public status-read example test
+        run: pnpm run test:status-read-example
+
       - name: Dispatch prompt generation test
         run: node scripts/test-dispatch-prompt-generate.mjs
 

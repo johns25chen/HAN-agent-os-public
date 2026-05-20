@@ -176,6 +176,16 @@ This creates a bridge from documentation toward real, controlled workflows witho
 
 ---
 
+## Implementation example
+
+A public-safe mock implementation is available here:
+
+- [Public-Safe Status-Read Example](../examples/public-safe-status-read-example.md)
+
+The implementation example uses a mock fixture and does not perform live OpenClaw execution.
+
+---
+
 ## Final boundary
 
 This workflow is a contract and example.

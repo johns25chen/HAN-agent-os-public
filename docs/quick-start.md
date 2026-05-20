@@ -130,6 +130,14 @@ Public smoke check:
 
     pnpm run test:public
 
+Public status-read workflow contract check:
+
+    pnpm run test:status-read
+
+Public status-read implementation example check:
+
+    pnpm run test:status-read-example
+
 These checks are intended to validate public code paths and safety constraints.
 
 They should not require private runtime artifacts.
@@ -166,6 +174,7 @@ Start with:
 - [Safety Model](han-agent-bus/safety-model.md)
 - [Public Roadmap](han-agent-bus/public-roadmap.md)
 - [Public-Safe Status-Read Workflow](workflows/public-safe-status-read-workflow.md)
+- [Public-Safe Status-Read Example](examples/public-safe-status-read-example.md)
 - [Security Policy](../SECURITY.md)
 - [Contributing Guide](../CONTRIBUTING.md)
 
