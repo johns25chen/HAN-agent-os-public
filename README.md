@@ -175,6 +175,7 @@ Public smoke check:
 
 - [Quick Start Guide](docs/quick-start.md)
 - [Minimal Joint-Agent Flow](docs/examples/minimal-joint-agent-flow.md)
+- [Public-Safe Status-Read Workflow](docs/workflows/public-safe-status-read-workflow.md)
 - [Technical Tool Reference](docs/han-agent-bus/technical-tool-reference.md)
 - [Safety Model](docs/han-agent-bus/safety-model.md)
 - [Public Roadmap](docs/han-agent-bus/public-roadmap.md)
@@ -252,11 +253,10 @@ It is a control architecture for building joint-agent workflows carefully.
 
 The next public direction should stay narrow:
 
-1. clearer installation guide
-2. better Hermes to OpenClaw to Codex workflow examples
-3. public-safe status-read workflow
-4. stronger documentation for tool contracts
-5. more example flows
+1. stronger documentation for tool contracts
+2. more example flows
+3. public-safe dry-run workflow
+4. public-safe status-read implementation example
 
 The project should not jump straight into unrestricted live automation.
 

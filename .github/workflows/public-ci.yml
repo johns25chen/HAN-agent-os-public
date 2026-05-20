@@ -49,6 +49,9 @@ jobs:
       - name: Public smoke test
         run: pnpm run test:public
 
+      - name: Public status-read workflow test
+        run: pnpm run test:status-read
+
       - name: Dispatch prompt generation test
         run: node scripts/test-dispatch-prompt-generate.mjs
 

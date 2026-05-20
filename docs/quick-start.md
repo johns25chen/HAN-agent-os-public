@@ -165,6 +165,7 @@ Start with:
 - [Technical Tool Reference](han-agent-bus/technical-tool-reference.md)
 - [Safety Model](han-agent-bus/safety-model.md)
 - [Public Roadmap](han-agent-bus/public-roadmap.md)
+- [Public-Safe Status-Read Workflow](workflows/public-safe-status-read-workflow.md)
 - [Security Policy](../SECURITY.md)
 - [Contributing Guide](../CONTRIBUTING.md)
 
