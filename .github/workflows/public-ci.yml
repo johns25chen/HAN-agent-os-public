@@ -61,6 +61,9 @@ jobs:
       - name: Public dry-run example test
         run: pnpm run test:dry-run-example
 
+      - name: Public workflow matrix test
+        run: pnpm run test:workflow-matrix
+
       - name: Dispatch prompt generation test
         run: node scripts/test-dispatch-prompt-generate.mjs
 

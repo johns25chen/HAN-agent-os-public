@@ -11,7 +11,8 @@
     "test:status-read": "node scripts/test-public-status-read-workflow.mjs",
     "test:status-read-example": "node scripts/test-public-status-read-example.mjs",
     "test:dry-run": "node scripts/test-public-dry-run-workflow.mjs",
-    "test:dry-run-example": "node scripts/test-public-dry-run-example.mjs"
+    "test:dry-run-example": "node scripts/test-public-dry-run-example.mjs",
+    "test:workflow-matrix": "node scripts/test-public-workflow-matrix.mjs"
   },
   "keywords": [],
   "author": "",

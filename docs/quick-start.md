@@ -146,6 +146,10 @@ Public dry-run implementation example check:
 
     pnpm run test:dry-run-example
 
+Public workflow matrix check:
+
+    pnpm run test:workflow-matrix
+
 These checks are intended to validate public code paths and safety constraints.
 
 They should not require private runtime artifacts.
@@ -185,6 +189,7 @@ Start with:
 - [Public-Safe Status-Read Example](examples/public-safe-status-read-example.md)
 - [Public-Safe Dry-Run Workflow](workflows/public-safe-dry-run-workflow.md)
 - [Public-Safe Dry-Run Example](examples/public-safe-dry-run-example.md)
+- [Public Workflow Matrix](workflows/public-workflow-matrix.md)
 - [Security Policy](../SECURITY.md)
 - [Contributing Guide](../CONTRIBUTING.md)
 
