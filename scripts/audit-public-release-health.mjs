@@ -34,6 +34,7 @@ function commandExists(command) {
 function run(command, args) {
   return spawnSync(command, args, {
     cwd: root,
+    env: { ...process.env, GH_PROMPT_DISABLED: '1' },
     encoding: 'utf8',
     stdio: ['ignore', 'pipe', 'pipe']
   });
@@ -118,39 +119,41 @@ function checkPackageScripts() {
 
 function checkGitTag() {
   if (!commandExists('git')) {
-    addWarning('git is unavailable; skipped local tag check for v0.2.6-public');
-    addCheck('git_tag_v0_2_6_public', true, 'skipped because git is unavailable');
+    addWarning('git is unavailable; could not verify baseline local tag v0.2.6-public');
+    addCheck('baseline_git_tag_v0_2_6_public', false, 'git is unavailable');
     return;
   }
 
   const result = run('git', ['rev-parse', '--verify', '--quiet', 'refs/tags/v0.2.6-public']);
   addCheck(
-    'git_tag_v0_2_6_public',
+    'baseline_git_tag_v0_2_6_public',
     result.status === 0,
-    'local git tag v0.2.6-public exists'
+    'minimum healthy baseline local git tag v0.2.6-public exists'
   );
 }
 
 function checkGithubRelease() {
   if (!commandExists('gh')) {
-    addWarning('gh is unavailable; skipped latest GitHub release check');
-    addCheck('github_latest_release_v0_2_6_public', true, 'skipped because gh is unavailable');
+    addWarning('gh is unavailable; could not verify baseline GitHub release v0.2.6-public');
+    addCheck('baseline_github_release_v0_2_6_public', false, 'gh is unavailable');
     return;
   }
 
-  const authStatus = run('gh', ['auth', 'status']);
-  if (authStatus.status !== 0) {
-    addWarning('gh is available but not authenticated; skipped latest GitHub release check');
-    addCheck('github_latest_release_v0_2_6_public', true, 'skipped because gh is not authenticated');
-    return;
-  }
+  const result = run('gh', [
+    'release',
+    'view',
+    'v0.2.6-public',
+    '--json',
+    'tagName,name,body',
+    '--jq',
+    '[.tagName, .name, .body] | join("\\n")'
+  ]);
 
-  const result = run('gh', ['release', 'view', '--json', 'tagName,name,body', '--jq', '[.tagName, .name, .body] | join("\\n")']);
-  const output = `${result.stdout || ''}\n${result.stderr || ''}`;
   addCheck(
-    'github_latest_release_v0_2_6_public',
-    result.status === 0 && output.includes('v0.2.6-public'),
-    'latest GitHub release contains v0.2.6-public'
+    'baseline_github_release_v0_2_6_public',
+    result.status === 0,
+    'minimum healthy baseline GitHub release v0.2.6-public exists directly',
+    result.status === 0 ? undefined : { stderr: result.stderr.trim() }
   );
 }
 
