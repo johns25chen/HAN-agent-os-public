@@ -14,6 +14,8 @@ Recommended current release after this document is published:
 
     v0.2.6-public or newer
 
+The release health audit uses `v0.2.6-public` as the minimum healthy baseline.
+
 If you are new to the project, start with:
 
 1. `README.md`
