@@ -1,29 +1,165 @@
 # HAN Agent OS
 
-Safety-first Agent OS for controlled, auditable AI automation.
+**A joint-agent operating system that connects Hermes, OpenClaw, and Codex into one controlled AI workflow.**
 
-HAN Agent OS is an experimental execution framework for AI agents that need to interact with real tools without losing control of approval, command mapping, execution evidence, rollback records, and post-run verification.
+HAN Agent OS is designed for builders who want more than a chatbot.
 
-Most agent frameworks focus on giving agents more power.
+It is for building a real AI work system where:
 
-HAN Agent OS focuses on the missing layer:
+- **Hermes** acts as the reasoning brain and command center.
+- **OpenClaw** acts as the local execution hand.
+- **Codex** acts as the code specialist.
+- **HAN Agent OS** connects them through task routing, approval gates, command mapping, receipts, rollback records, and audit trails.
 
-How do we let agents act while still knowing exactly what was approved, what command ran, what happened, and whether it may ever run again?
+In one sentence:
+
+> Hermes thinks. OpenClaw acts. Codex codes. HAN Agent OS keeps the whole chain under control.
 
 ---
 
-## Status at a glance
+## Why this project exists
+
+Most AI agent projects focus on making agents more powerful.
+
+That is not enough.
+
+Once an agent can touch your computer, codebase, browser, files, APIs, or workflow tools, the real question becomes:
+
+> Who decides what the agent is allowed to do, which tool should do it, what command actually ran, and how do you prove the result afterward?
+
+HAN Agent OS exists to answer that question.
+
+It is the control layer for a joint-agent stack.
+
+The goal is simple:
+
+> Let AI think, act, and code together without letting it run out of control.
+
+---
+
+## The joint-agent architecture
+
+HAN Agent OS is built around a three-part agent stack.
+
+| Role | System | Responsibility |
+|---|---|---|
+| Brain | Hermes | Understands goals, plans steps, coordinates the workflow |
+| Hands | OpenClaw | Executes local actions, tool calls, workflow operations, and desktop-side tasks |
+| Code specialist | Codex | Reads, edits, tests, and improves code repositories |
+| Control bus | HAN Agent OS | Routes tasks, checks approval, maps commands, records receipts, and keeps an audit trail |
+
+The architecture looks like this:
+
+    Human Operator
+      -> Hermes
+      -> HAN Agent OS
+      -> OpenClaw for local execution
+      -> Codex for code work
+      -> Receipt / audit / rollback record
+
+This is not meant to be uncontrolled automation.
+
+It is meant to be controlled delegation.
+
+---
+
+## What HAN Agent OS does
+
+HAN Agent OS provides the control bus between planning and action.
+
+It helps define:
+
+- which agent should handle the task
+- whether the task is planning-only, dry-run, or live execution
+- whether human approval is required
+- which command is allowed to run
+- whether the approval is exact or vague
+- whether the action may run once or repeatedly
+- what evidence proves the result
+- what rollback or no-op record should exist after execution
+
+In practical terms, HAN Agent OS is the safety and routing layer that lets Hermes, OpenClaw, and Codex cooperate without becoming a blind auto-runner.
+
+---
+
+## Example workflow
+
+A normal joint-agent flow can look like this:
+
+1. The human gives Hermes a goal.
+2. Hermes breaks the goal into a plan.
+3. HAN Agent OS classifies the task and checks the allowed boundary.
+4. If code changes are needed, Codex handles implementation.
+5. If local execution is needed, OpenClaw performs the approved action.
+6. HAN Agent OS records what happened.
+7. The human gets a receipt, result summary, and next-step decision point.
+
+The important part is not only that the AI can act.
+
+The important part is that every action has a boundary.
+
+---
+
+## Current public milestone
+
+The public release includes the core control-bus work and safety model.
+
+The private development line has already proven a controlled OpenClaw no-op live ping under a strict single-use boundary.
+
+The public project exposes the cleaned architecture, source code, technical references, and safety model without private runtime logs or internal execution artifacts.
+
+Current status:
 
 | Area | Status |
 |---|---|
-| Current stable phase | V8.3 |
-| Proven live action | Controlled OpenClaw no-op ping |
-| Execution count | Exactly once |
-| Receipt | Materialized |
-| Rollback / no-op record | Materialized |
-| Post-run verification | Complete |
-| Rerun allowed | No |
-| V8.4 | Decision gate only |
+| Public release | v0.1.x public line |
+| Core concept | Hermes + OpenClaw + Codex joint-agent control bus |
+| Public source | Available |
+| Technical reference | Available |
+| Safety model | Available |
+| Private runtime logs | Excluded |
+| Jobs artifacts | Excluded |
+| V8.4 | Not open |
+
+---
+
+## What is included
+
+This public repository includes:
+
+- MCP server source
+- guarded execution tools
+- Codex job runner interface
+- OpenClaw task dry-run and approved execution contracts
+- dispatch prompt generation and validation
+- technical tool reference
+- safety model
+- public roadmap
+- verification scripts
+
+It does not include private runtime history, job artifacts, raw stdout or stderr logs, private audit records, or internal receipts.
+
+---
+
+## Quick start
+
+Install dependencies:
+
+    pnpm install --frozen-lockfile
+
+Build the project:
+
+    pnpm build
+
+Start the MCP server:
+
+    pnpm start
+
+Development mode:
+
+    pnpm dev
+
+---
 
 ## Key links
 
@@ -33,138 +169,52 @@ How do we let agents act while still knowing exactly what was approved, what com
 
 ---
 
-## Why this project exists
+## Design principles
 
-AI agents are becoming capable enough to touch real systems:
+### 1. Hermes should think, not blindly execute
 
-- local machines
-- automation tools
-- APIs
-- browsers
-- files
-- workflows
-- messaging channels
-- long-running tasks
+Reasoning and planning should stay separate from live action.
 
-That power is useful, but unsafe when execution is vague.
+### 2. OpenClaw should act only inside an approved boundary
 
-HAN Agent OS explores a safer architecture for agent execution:
+Execution should be local, inspectable, and controlled.
 
-    Intent
-      -> Phase Charter
-      -> Threat Model
-      -> Approval Gate
-      -> Exact Command Mapping
-      -> Final Pre-Run Check
-      -> Single-Use Execution
-      -> Receipt
-      -> Rollback / No-Op Record
-      -> Post-Run Verification
-      -> Stable Closure
+### 3. Codex should own code work
 
-The goal is not fast automation.
+Repository edits, tests, refactors, and implementation tasks should go through the code specialist.
 
-The goal is trustworthy automation.
+### 4. HAN Agent OS should control the chain
 
----
+The control bus should decide what is allowed, what is blocked, what is logged, and what must be reviewed.
 
-## What makes it different
+### 5. No vague approval
 
-HAN Agent OS treats live agent execution as a controlled system, not a casual chat response.
+A vague instruction should not unlock powerful action.
 
-Every live action should answer:
+### 6. No fake receipts
 
-| Question | Required answer |
-|---|---|
-| What is allowed | exact scope |
-| Who approved it | explicit operator approval |
-| Which agent runs it | verified agent identity |
-| Which command runs | exact command mapping |
-| How many times may it run | single-use execution |
-| What happened | real receipt from stdout and stderr |
-| Can it be undone | rollback or no-op record |
-| Is it closed | post-run verification and stable tag |
+A result should be backed by real execution evidence.
 
-This makes the system slower than just running commands.
+### 7. No automatic expansion
 
-That is the point.
-
----
-
-## Proven milestone: V8.3
-
-HAN Agent Bus V8.3 completed a controlled OpenClaw live no-op adapter ping under a strict single-use boundary.
-
-The V8.3 chain proved:
-
-- exact approval can bind to one live action
-- a dedicated planner agent can be created and verified
-- an abstract live tool can be mapped to a concrete command
-- a final pre-run check can block unsafe execution
-- exactly one live no-op ping can be executed
-- execution output can be captured as a real receipt
-- rollback and no-op records can be materialized
-- post-run verification can close the execution loop
-- stable tags can represent verified phase boundaries
-
-Final V8.3 result:
-
-- payload: HEARTBEAT_OK
-- exit code: 0
-- execution count performed: 1
-- single-use approval consumed: true
-- rerun allowed: false
-
-V8.3 is stable.
-
-V8.4 is not open. Future work should start with a new public phase charter.
-
----
-
-## Core principles
-
-### No hidden execution
-
-If an action is live, it must be declared.
-
-### No guessed command mapping
-
-An approved abstract tool must map to a concrete command before execution.
-
-### No reusable approval
-
-Approvals are exact, scoped, and single-use.
-
-### No fake receipts
-
-Receipts must come from real execution artifacts.
-
-### No silent substitution
-
-If approval says planner, the system must not quietly run main, codex, or another agent.
-
-### No automatic expansion
-
-A successful phase does not authorize the next phase.
-
-### No stable tag without closure
-
-Stable means verified, not merely completed.
+A successful phase does not automatically authorize the next phase.
 
 ---
 
 ## Who this is for
 
-HAN Agent OS is for builders who care about controlled AI automation:
+HAN Agent OS is for builders who want to combine reasoning agents, local execution agents, and code agents into one practical system.
+
+It is useful for:
 
 - AI agent developers
-- local-first automation builders
-- agent framework researchers
-- tool-using LLM operators
-- safety-conscious automation engineers
-- people connecting agents to real machines or workflows
-
-It is especially useful if you believe agents should become more capable while execution becomes more disciplined.
+- local automation builders
+- OpenClaw users
+- Hermes-Agent users
+- Codex workflow users
+- MCP tool builders
+- people building human-in-the-loop AI systems
+- people who want agents to do real work without losing control
 
 ---
 
@@ -174,90 +224,41 @@ HAN Agent OS is not:
 
 - a general chatbot
 - a one-click AutoGPT clone
-- an unrestricted agent runner
-- a consumer automation toy
-- a framework for uncontrolled shell or browser automation
+- an unrestricted shell runner
+- an uncontrolled browser automation framework
+- a finished consumer product
 - a promise that agents can safely run everything
 
-This project is intentionally conservative.
-
-It is designed for high-trust, human-controlled agent execution.
+It is a control architecture for building joint-agent workflows carefully.
 
 ---
 
-## Current project state
+## Public roadmap
 
-- V8.3: stable
-- V8.4: decision gate only
-- live no-op ping: completed exactly once
-- rerun allowed: false
+The next public direction should stay narrow:
 
-V8.4 may open only through a new phase charter with:
+1. clearer installation guide
+2. better Hermes to OpenClaw to Codex workflow examples
+3. minimal demo task
+4. public-safe status-read workflow
+5. stronger documentation for tool contracts
+6. GitHub Actions CI
+7. LICENSE, SECURITY.md, and CONTRIBUTING.md
 
-- one narrow live action
-- one target agent
-- one command path
-- one exact approval phrase
-- one receipt format
-- one rollback or no-op rule
-- one stop condition
+The project should not jump straight into unrestricted live automation.
 
 ---
 
-## Technical reference
+## Current positioning
 
-For implementation details, tool contracts, input/output examples, and guarded execution behavior, see:
+HAN Agent OS is best understood as:
 
-- [Technical Tool Reference](docs/han-agent-bus/technical-tool-reference.md)
+> A safety-first control bus for a Hermes + OpenClaw + Codex joint-agent system.
 
----
+Hermes provides the brain.
 
-## Repository structure
+OpenClaw provides the hands.
 
-    docs/han-agent-bus/
-      Phase charters
-      Decision gates
-      Approval records
-      Command mapping records
-      Readiness checks
-      Receipt model
-      Rollback / no-op model
-      Post-run verification model
-      Retrospectives
-      Documentation index
-      Phase ledger
+Codex provides the coding specialist.
 
-    scripts/han-agent-bus/
-      Verification scripts for phase gates and receipts
-
-
----
-
-## Why it matters
-
-The future of agent systems will not be decided only by model intelligence.
-
-It will be decided by whether humans can trust agent actions.
-
-HAN Agent OS is a working experiment in making agent execution:
-
-- explicit
-- bounded
-- inspectable
-- receipt-driven
-- rollback-aware
-- resistant to uncontrolled autonomy
-
-Build agents that can act without giving them permission to drift.
-
----
-
-## Status
-
-This repository is early.
-
-Treat it as a serious architecture experiment for safe agent execution, not as a finished product.
-
-The most important idea here is not more automation.
-
-It is controlled automation you can audit after it acts.
+HAN Agent OS provides the rules, routing, approval, receipts, and audit trail that make the system usable without becoming reckless.
