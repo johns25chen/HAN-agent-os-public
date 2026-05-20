@@ -13,7 +13,8 @@
     "test:dry-run": "node scripts/test-public-dry-run-workflow.mjs",
     "test:dry-run-example": "node scripts/test-public-dry-run-example.mjs",
     "test:workflow-matrix": "node scripts/test-public-workflow-matrix.mjs",
-    "test:release-index": "node scripts/test-public-release-index.mjs"
+    "test:release-index": "node scripts/test-public-release-index.mjs",
+    "audit:release-health": "node scripts/audit-public-release-health.mjs"
   },
   "keywords": [],
   "author": "",

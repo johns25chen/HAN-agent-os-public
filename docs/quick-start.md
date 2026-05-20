@@ -154,6 +154,10 @@ Public release index check:
 
     pnpm run test:release-index
 
+Public release health audit:
+
+    pnpm run audit:release-health
+
 These checks are intended to validate public code paths and safety constraints.
 
 They should not require private runtime artifacts.
